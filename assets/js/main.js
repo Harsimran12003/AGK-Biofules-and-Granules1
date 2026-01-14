@@ -3,6 +3,7 @@ AOS.init({
   once: true
 });
 
+
 // NAV SHADOW
 window.addEventListener("scroll", () => {
   const nav = document.querySelector(".navbar");
@@ -23,17 +24,20 @@ function closePopup() {
 
 // HAMBURGER MENU
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+  const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("active");
-});
-
-// CLOSE ON LINK CLICK
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navLinks.classList.remove("active");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
   });
-});
+
+  // Close menu on link click
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+    });
+  });
+
+
+

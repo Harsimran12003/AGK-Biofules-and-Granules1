@@ -35,17 +35,15 @@ body {
    NAVBAR (GLASS)
 ========================= */
 .navbar {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   width: 100%;
   padding: 16px 8%;
   background: rgba(4, 26, 47, 0.65);
-  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--glass-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
 }
 
 .logo {
@@ -55,7 +53,8 @@ body {
 }
 
 .logo img {
-  height: 44px;
+  height: 80px;
+  width: 80px;
 }
 
 .logo span {
@@ -70,6 +69,7 @@ body {
   list-style: none;
   display: flex;
   gap: 32px;
+  z-index: -100;
 }
 
 .nav-links a {
@@ -422,4 +422,102 @@ footer {
   footer {
     font-size: 13px;
   }
+}
+
+/* =========================
+   LUXURY FOOTER
+========================= */
+.site-footer {
+  background: linear-gradient(
+    180deg,
+    rgba(4, 26, 47, 0.85),
+    rgba(2, 11, 17, 0.95)
+  );
+  backdrop-filter: blur(18px);
+  border-top: 1px solid var(--glass-border);
+  padding: 70px 8% 0;
+  color: #cdeee8;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 50px;
+}
+
+/* BRAND */
+.footer-brand h3 {
+  font-size: 26px;
+  margin-bottom: 14px;
+  background: linear-gradient(90deg, var(--neon-green), var(--aqua));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #bfeae1;
+}
+
+/* SECTIONS */
+.footer-details h4,
+.footer-address h4 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #e8f5f2;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-details p,
+.footer-address p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #bfeae1;
+}
+
+.footer-details strong {
+  color: #ffffff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 22px 8%;
+  text-align: center;
+  font-size: 17px;
+  color: #9dded2;
+}
+
+.footer-bottom span {
+  color: var(--neon-green);
+  font-weight: 600;
+}
+
+/* =========================
+   FOOTER RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .site-footer {
+    padding: 60px 6% 0;
+  }
+}
+/* ENSURE MOBILE NAV WORKS */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: flex;
+    z-index: 50; 
+    backdrop-filter: none;
+  }
+
 }
